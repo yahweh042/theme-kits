@@ -1,9 +1,9 @@
-package com.github.yahweh042.themekits.services
+package com.github.yahweh042.kits.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.yahweh042.themekits.MyBundle
+import com.github.yahweh042.kits.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

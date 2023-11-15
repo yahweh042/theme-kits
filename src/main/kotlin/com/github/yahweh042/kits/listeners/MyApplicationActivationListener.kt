@@ -1,4 +1,4 @@
-package com.github.yahweh042.themekits.listeners
+package com.github.yahweh042.kits.listeners
 
 import com.intellij.openapi.application.ApplicationActivationListener
 import com.intellij.openapi.diagnostic.thisLogger

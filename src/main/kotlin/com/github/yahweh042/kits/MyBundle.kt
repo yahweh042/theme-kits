@@ -1,4 +1,4 @@
-package com.github.yahweh042.themekits
+package com.github.yahweh042.kits
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

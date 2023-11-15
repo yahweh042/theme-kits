@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.yahweh042.themekits</id>
-    <name>theme-kits Template</name>
+    <id>com.github.yahweh042.kits</id>
+    <name>ThemeKits</name>
     <vendor>yahweh042</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,10 +9,17 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.yahweh042.themekits.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <themeProvider id="e6a0de6e-8511-4e05-88e4-efc415bfde9b" path="/internal.theme.json"/>
+        <themeProvider id="be8b0f9d-9bfe-41cd-8f88-ce1a3b45c3c1" path="/gruvbox.theme.json"/>
+        <themeProvider id="522f020f-4a89-4346-9eb4-d13444990ad9" path="/solarized.theme.json"/>
+
+        <applicationService serviceImplementation="com.github.yahweh042.kits.ThemeKitsState" id="ThemeKitsState" />
+        <applicationConfigurable instance="com.github.yahweh042.kits.ThemeKitsConfigurable" displayName="ThemeKits"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.yahweh042.themekits.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+        <listener class="com.github.yahweh042.kits.listeners.MyApplicationActivationListener"
+                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+
 </idea-plugin>
