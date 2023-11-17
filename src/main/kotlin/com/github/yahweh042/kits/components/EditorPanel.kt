@@ -26,7 +26,7 @@ class EditorPanel {
                 // file?.changeConfig(mEditor.document.text)
             }
         })
-        mPanel.add(mEditor.component, BorderLayout.CENTER)
+        mPanel.add(mEditor.component)
     }
 
     fun getPanel() = mPanel

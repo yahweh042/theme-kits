@@ -1,19 +1,22 @@
 package com.github.yahweh042.kits.components
 
 import com.intellij.openapi.ui.ComboBox
+import com.intellij.ui.components.JBLabel
 import java.awt.FlowLayout
-import java.awt.Label
 import javax.swing.JPanel
 
-class ConfigComboBox(configNames: Set<String>) {
+class ConfigComboBox(configNames: Set<String>, defaultSelectedItem: String) {
 
-    private var mPanel: JPanel
+    private val mPanel: JPanel = JPanel(FlowLayout(FlowLayout.LEFT, 1, 1))
     private var mComboBox: ComboBox<String>
 
     init {
-        mPanel = JPanel(FlowLayout(FlowLayout.LEFT))
-        mPanel.add(Label("Theme Config:"))
-        mComboBox = ComboBox(configNames.toTypedArray())
+        mPanel.add(JBLabel("Theme Config:"))
+        mComboBox = ComboBox<String>(configNames.toTypedArray())
+        mComboBox.selectedItem = defaultSelectedItem
+        mComboBox.addItemListener {
+
+        }
         mPanel.add(mComboBox)
     }
 

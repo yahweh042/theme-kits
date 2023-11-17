@@ -2,7 +2,7 @@ package com.github.yahweh042.kits
 
 
 data class ThemeConfigSettings(
-    val selectConfig: String = "internal",
+    val selectedConfig: String = "internal",
     val configs: Map<String, ThemeConfig> = hashMapOf(Pair("internal", ThemeConfig("internal", """
         {
             "Button.arc": 5
