@@ -33,6 +33,7 @@
     "Panel.background": "#002b36",
     "Panel.foreground": "#839496",
     "SidePanel.background": "#002b36",
+    "ScrollPane.background": "#002b36",
     "windowBorder": "#002b36",
     "Borders.color": "#073642",
     "StatusBar.background": "#002b36",
@@ -83,6 +84,7 @@
     "List.background": "#002b36",
     "List.dropLineColor": "#002b36",
     "List.rowHeight": 24,
+    "List.selectionBackground": "#073642",
     "PopupMenu.background": "#002b36",
     "PopupMenu.selectionBackground": "#073642",
     "PopupMenu.borderWidth": 0,
@@ -92,6 +94,9 @@
     "MainToolBar.Dropdown.arc": 5,
     "MainToolBar.Button.arc": 5,
     "Notification.arc": 5,
+    "Notification.background": "#073642",
+    "Notification.foreground": "#839496",
+    "Notification.borderColor": "#073642",
     "ActionButton.separatorColor": "#073642",
     "Separator.separatorColor": "#073642",
     "Menu.background": "#002b36",
@@ -133,12 +138,12 @@
     "ScrollBar.thumbColor": "#002b36",
     "ScrollBar.thumbBorderColor": "#002b36",
     "ScrollBar.trackColor": "#002b36",
-    "ScrollPane.background": "#002b36",
     "PasswordField.background": "#002b36",
     "TextPane.background": "#002b36",
     "TextArea.background": "#073642",
     "TableHeader.background": "#073642",
     "TableHeader.cellBorder": "0,0,0,0",
-    "TitlePane.background": "#002b36"
+    "TitlePane.background": "#002b36",
+    "Label.background": "#002b36"
   }
 }
