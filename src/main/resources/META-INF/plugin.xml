@@ -15,6 +15,7 @@
 
         <applicationService serviceImplementation="com.github.yahweh042.kits.ThemeKitsState" id="ThemeKitsState" />
         <applicationConfigurable instance="com.github.yahweh042.kits.ThemeKitsConfigurable" displayName="ThemeKits"/>
+        <themeProvider id="a4d74e7f-d628-439e-90a7-5be02d6864c8" path="/material.theme.json"/>
     </extensions>
 
     <applicationListeners>
