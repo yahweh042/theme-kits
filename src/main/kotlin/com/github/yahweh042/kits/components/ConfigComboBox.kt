@@ -7,18 +7,23 @@ import javax.swing.JPanel
 
 class ConfigComboBox(configNames: Set<String>, defaultSelectedItem: String) {
 
-    private val mPanel: JPanel = JPanel(FlowLayout(FlowLayout.LEFT, 1, 1))
+    private val mPanel: JPanel = JPanel(FlowLayout(FlowLayout.LEFT, 5, 5))
     private var mComboBox: ComboBox<String>
+    private var onSelectedItemChanged: ((String) -> Unit)? = null
 
     init {
-        mPanel.add(JBLabel("Theme Config:"))
+        mPanel.add(JBLabel("Theme config:"))
         mComboBox = ComboBox<String>(configNames.toTypedArray())
         mComboBox.selectedItem = defaultSelectedItem
         mComboBox.addItemListener {
-
+            onSelectedItemChanged?.invoke(mComboBox.selectedItem as String)
         }
         mPanel.add(mComboBox)
     }
 
     fun getPanel() = mPanel
+
+    fun setOnSelectedItemChanged(listener: (String) -> Unit) {
+        onSelectedItemChanged = listener
+    }
 }
