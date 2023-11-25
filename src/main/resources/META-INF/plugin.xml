@@ -19,8 +19,8 @@
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.yahweh042.kits.listeners.MyApplicationActivationListener"
-                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+        <listener class="com.github.yahweh042.kits.listeners.ThemeKitsCreatedListener"
+                  topic="com.intellij.ide.AppLifecycleListener"/>
     </applicationListeners>
 
 </idea-plugin>
