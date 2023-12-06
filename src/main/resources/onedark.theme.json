@@ -1,14 +1,15 @@
 {
-  "name": "internal",
+  "name": "one dark",
   "dark": true,
   "author": "",
-  "editorScheme": "/internal.xml",
+  "editorScheme": "/onedark.xml",
   "colors": {
-    "bg": "#3c3f41",
-    "fg": "#bbbbbb",
-    "bg2": "#4c5052",
-    "focusedColor": "#2f65ca",
-    "disableColor": "#808080"
+    "bg": "#21252B",
+    "fg": "#6B727D",
+    "bg2": "#282C34",
+    "focusedColor": "#2979ff",
+    "disableColor": "#6B727D",
+    "#3c3f41": "#21252B"
   },
   "icons": {
     "ColorPalette": {
@@ -78,6 +79,7 @@
     "ComboBox.ArrowButton.background": "bg",
     "ComboBox.ArrowButton.nonEditableBackground": "bg",
     "ComboBox.ArrowButton.disabledIconColor": "disableColor",
+    "ComboBox.ArrowButton.iconColor": "bg",
     "CheckBox.background": "bg",
     "CheckBoxMenuItem.background": "bg2",
     "TextField.background": "bg",
