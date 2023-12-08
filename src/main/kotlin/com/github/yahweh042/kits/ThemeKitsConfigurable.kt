@@ -120,6 +120,7 @@ class ThemeKitsConfigurable : SearchableConfigurable {
                 }
                 val first = (mTable.getValueAt(selectedRow, 0) as Pair<*, *>).first
                 mOriginValues.remove(first)
+                mTable.model = createTableModel()
                 isModified = true
             }
             .createPanel()
@@ -156,7 +157,7 @@ class ThemeKitsConfigurable : SearchableConfigurable {
                     val parseValue = UITheme.parseValue(key, `val`) ?: return
                     if (isEditable(parseValue)) {
                         mOriginValues[key] = `val`
-                        mTable.setModel(createTableModel())
+                        mTable.model = createTableModel()
                         isModified = true
                     }
                 }
