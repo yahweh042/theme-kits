@@ -2,40 +2,12 @@
   "name": "one dark",
   "dark": true,
   "author": "",
-  "editorScheme": "/onedark.xml",
   "colors": {
-    "bg": "#21252B",
-    "fg": "#6B727D",
-    "bg2": "#282C34",
-    "focusedColor": "#2979ff",
-    "disableColor": "#6B727D",
-    "#3c3f41": "#21252B"
-  },
-  "icons": {
-    "ColorPalette": {
-      "Checkbox.Background.Default": "bg",
-      "Checkbox.Background.Default.Dark": "bg",
-      "Checkbox.Background.Selected": "bg",
-      "Checkbox.Background.Selected.Dark": "bg",
-      "Checkbox.Background.Disabled": "bg",
-      "Checkbox.Background.Disabled.Dark": "bg",
-      "Checkbox.Border.Default": "bg2",
-      "Checkbox.Border.Default.Dark": "bg2",
-      "Checkbox.Border.Selected": "bg2",
-      "Checkbox.Border.Selected.Dark": "bg2",
-      "Checkbox.Border.Disabled": "bg2",
-      "Checkbox.Border.Disabled.Dark": "bg2",
-      "Checkbox.Foreground.Selected": "fg",
-      "Checkbox.Foreground.Selected.Dark": "fg",
-      "Checkbox.Foreground.Disabled": "fg",
-      "Checkbox.Foreground.Disabled.Dark": "fg",
-      "Checkbox.Focus.Thin.Default": "focusedColor",
-      "Checkbox.Focus.Thin.Default.Dark": "focusedColor",
-      "Checkbox.Focus.Thin.Selected": "focusedColor",
-      "Checkbox.Focus.Thin.Selected.Dark": "focusedColor",
-      "Checkbox.Focus.Wide": "focusedColor",
-      "Checkbox.Focus.Wide.Dark": "focusedColor"
-    }
+    "bg": "#282C34",
+    "fg": "#979FAD",
+    "bg2": "#3A3F4B",
+    "focusedColor": "#4D515D",
+    "disableColor": "#6B727D"
   },
   "ui": {
     "Panel.background": "bg",
@@ -121,6 +93,8 @@
     "Menu.separatorColor": "bg2",
     "Menu.Selection.arc": 5,
     "Menu.selectionBackground": "bg2",
+    "MenuItem.background": "bg",
+    "MenuItem.foreground": "fg",
     "Group.separatorColor": "bg2",
     "Group.disabledSeparatorColor": "bg2",
     "Editor.background": "#282828",
@@ -188,5 +162,31 @@
     "Tooltip.Learning.background": "bg",
     "NewUiOnboarding.Dialog.background": "bg",
     "NewClass.Panel.background": "bg"
+  },
+  "icons": {
+    "ColorPalette": {
+      "Checkbox.Background.Default": "bg",
+      "Checkbox.Background.Default.Dark": "bg",
+      "Checkbox.Background.Selected": "bg",
+      "Checkbox.Background.Selected.Dark": "bg",
+      "Checkbox.Background.Disabled": "bg",
+      "Checkbox.Background.Disabled.Dark": "bg",
+      "Checkbox.Border.Default": "bg2",
+      "Checkbox.Border.Default.Dark": "bg2",
+      "Checkbox.Border.Selected": "bg2",
+      "Checkbox.Border.Selected.Dark": "bg2",
+      "Checkbox.Border.Disabled": "bg2",
+      "Checkbox.Border.Disabled.Dark": "bg2",
+      "Checkbox.Foreground.Selected": "fg",
+      "Checkbox.Foreground.Selected.Dark": "fg",
+      "Checkbox.Foreground.Disabled": "fg",
+      "Checkbox.Foreground.Disabled.Dark": "fg",
+      "Checkbox.Focus.Thin.Default": "focusedColor",
+      "Checkbox.Focus.Thin.Default.Dark": "focusedColor",
+      "Checkbox.Focus.Thin.Selected": "focusedColor",
+      "Checkbox.Focus.Thin.Selected.Dark": "focusedColor",
+      "Checkbox.Focus.Wide": "focusedColor",
+      "Checkbox.Focus.Wide.Dark": "focusedColor"
+    }
   }
 }

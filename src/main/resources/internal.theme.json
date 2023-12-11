@@ -1,40 +1,13 @@
 {
   "name": "internal",
   "dark": true,
-  "author": "",
-  "editorScheme": "/internal.xml",
+  "author": "123",
   "colors": {
     "bg": "#3c3f41",
     "fg": "#bbbbbb",
     "bg2": "#4c5052",
     "focusedColor": "#2f65ca",
     "disableColor": "#808080"
-  },
-  "icons": {
-    "ColorPalette": {
-      "Checkbox.Background.Default": "bg",
-      "Checkbox.Background.Default.Dark": "bg",
-      "Checkbox.Background.Selected": "bg",
-      "Checkbox.Background.Selected.Dark": "bg",
-      "Checkbox.Background.Disabled": "bg",
-      "Checkbox.Background.Disabled.Dark": "bg",
-      "Checkbox.Border.Default": "bg2",
-      "Checkbox.Border.Default.Dark": "bg2",
-      "Checkbox.Border.Selected": "bg2",
-      "Checkbox.Border.Selected.Dark": "bg2",
-      "Checkbox.Border.Disabled": "bg2",
-      "Checkbox.Border.Disabled.Dark": "bg2",
-      "Checkbox.Foreground.Selected": "fg",
-      "Checkbox.Foreground.Selected.Dark": "fg",
-      "Checkbox.Foreground.Disabled": "fg",
-      "Checkbox.Foreground.Disabled.Dark": "fg",
-      "Checkbox.Focus.Thin.Default": "focusedColor",
-      "Checkbox.Focus.Thin.Default.Dark": "focusedColor",
-      "Checkbox.Focus.Thin.Selected": "focusedColor",
-      "Checkbox.Focus.Thin.Selected.Dark": "focusedColor",
-      "Checkbox.Focus.Wide": "focusedColor",
-      "Checkbox.Focus.Wide.Dark": "focusedColor"
-    }
   },
   "ui": {
     "Panel.background": "bg",
@@ -184,5 +157,31 @@
     "Tooltip.Learning.background": "bg",
     "NewUiOnboarding.Dialog.background": "bg",
     "NewClass.Panel.background": "bg"
+  },
+  "icons": {
+    "ColorPalette": {
+      "Checkbox.Background.Default": "#3c3f41",
+      "Checkbox.Background.Default.Dark": "#3c3f41",
+      "Checkbox.Background.Selected": "#3c3f41",
+      "Checkbox.Background.Selected.Dark": "#3c3f41",
+      "Checkbox.Background.Disabled": "#3c3f41",
+      "Checkbox.Background.Disabled.Dark": "#3c3f41",
+      "Checkbox.Border.Default": "#4c5052",
+      "Checkbox.Border.Default.Dark": "#4c5052",
+      "Checkbox.Border.Selected": "#4c5052",
+      "Checkbox.Border.Selected.Dark": "#4c5052",
+      "Checkbox.Border.Disabled": "#4c5052",
+      "Checkbox.Border.Disabled.Dark": "#4c5052",
+      "Checkbox.Foreground.Selected": "#bbbbbb",
+      "Checkbox.Foreground.Selected.Dark": "#bbbbbb",
+      "Checkbox.Foreground.Disabled": "#bbbbbb",
+      "Checkbox.Foreground.Disabled.Dark": "#bbbbbb",
+      "Checkbox.Focus.Thin.Default": "#2f65ca",
+      "Checkbox.Focus.Thin.Default.Dark": "#2f65ca",
+      "Checkbox.Focus.Thin.Selected": "#2f65ca",
+      "Checkbox.Focus.Thin.Selected.Dark": "#2f65ca",
+      "Checkbox.Focus.Wide": "#2f65ca",
+      "Checkbox.Focus.Wide.Dark": "#2f65ca"
+    }
   }
 }
