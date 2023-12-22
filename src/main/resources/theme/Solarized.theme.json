@@ -1,8 +1,8 @@
 {
-  "name": "solarized",
+  "name": "Solarized",
   "dark": true,
   "author": "",
-  "editorScheme": "/solarized.xml",
+  "editorScheme": "/theme/solarized.xml",
   "icons": {
     "ColorPalette": {
       "Checkbox.Background.Default": "#002b36",

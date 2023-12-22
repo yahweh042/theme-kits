@@ -1,14 +1,15 @@
 {
-  "name": "one dark",
+  "name": "One Dark",
   "dark": true,
   "author": "",
   "colors": {
     "bg": "#282C34",
     "fg": "#979FAD",
     "bg2": "#3A3F4B",
-    "focusedColor": "#4D515D",
+    "focusedColor": "#2979ff",
     "disableColor": "#6B727D"
   },
+  "editorScheme": "/theme/One Dark.xml",
   "ui": {
     "Panel.background": "bg",
     "Panel.foreground": "fg",
@@ -161,7 +162,9 @@
     "ToolTip.foreground": "fg",
     "Tooltip.Learning.background": "bg",
     "NewUiOnboarding.Dialog.background": "bg",
-    "NewClass.Panel.background": "bg"
+    "NewClass.Panel.background": "bg",
+    "Menu.background": "bg",
+    "Menu.foreground": "fg"
   },
   "icons": {
     "ColorPalette": {

@@ -67,7 +67,7 @@ class ThemeKitsFactory : ToolWindowFactory {
             })
             val toolbar = ActionManager.getInstance().createActionToolbar("Toolbar", actionGroup, true)
             panel.add(toolbar.component, BorderLayout.NORTH)
-            val jbList = JBList("internal.theme.json", "material.theme.json")
+            val jbList = JBList("Internal.theme.json", "Material.theme.json")
             panel.add(jbList, BorderLayout.CENTER)
             return panel
         }

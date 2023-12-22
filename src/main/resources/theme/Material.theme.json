@@ -1,8 +1,8 @@
 {
-  "name": "material",
+  "name": "Material",
   "dark": true,
   "author": "",
-  "editorScheme": "/material.xml",
+  "editorScheme": "/theme/material.xml",
   "icons": {
     "ColorPalette": {
       "Checkbox.Background.Default": "#2e2d2c",

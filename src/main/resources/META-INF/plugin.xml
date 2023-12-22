@@ -9,19 +9,15 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <themeProvider id="e6a0de6e-8511-4e05-88e4-efc415bfde9b" path="/theme/internal.theme.json"/>
-        <themeProvider id="be8b0f9d-9bfe-41cd-8f88-ce1a3b45c3c1" path="/theme/gruvbox.theme.json"/>
-        <themeProvider id="522f020f-4a89-4346-9eb4-d13444990ad9" path="/theme/solarized.theme.json"/>
-        <themeProvider id="a4d74e7f-d628-439e-90a7-5be02d6864c8" path="/theme/material.theme.json"/>
-        <themeProvider id="9a282929-a916-4baa-bd5a-5691d19d324e" path="/theme/onedark.theme.json"/>
+        <themeProvider id="e6a0de6e-8511-4e05-88e4-efc415bfde9b" path="/theme/Internal.theme.json"/>
+        <themeProvider id="be8b0f9d-9bfe-41cd-8f88-ce1a3b45c3c1" path="/theme/Gruvbox.theme.json"/>
+        <themeProvider id="522f020f-4a89-4346-9eb4-d13444990ad9" path="/theme/Solarized.theme.json"/>
+        <themeProvider id="a4d74e7f-d628-439e-90a7-5be02d6864c8" path="/theme/Material.theme.json"/>
+        <themeProvider id="9a282929-a916-4baa-bd5a-5691d19d324e" path="/theme/One Dark.theme.json"/>
 
         <applicationService serviceImplementation="com.github.yahweh042.kits.ThemeKitsState" id="ThemeKitsState"/>
-        <applicationConfigurable instance="com.github.yahweh042.kits.OneConfigurable" displayName="ThemeKits"/>
+        <applicationConfigurable instance="com.github.yahweh042.kits.ThemeKitsConfigurable" displayName="ThemeKits"/>
 
-        <!--<toolWindow factoryClass="com.github.yahweh042.kits.toolWindow.ThemeKitsFactory" id="ThemeKits00"/>-->
-
-        <themeProvider id="374666ac-606f-4850-a45b-fc8dccc3e167" path="/theme/idark.theme.json"/>
-        <themeProvider id="f734918d-d367-4764-940b-c0e7e4d12c09" path="/theme/sublime.theme.json"/>
     </extensions>
 
     <applicationListeners>

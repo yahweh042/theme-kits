@@ -1,37 +1,38 @@
 package com.github.yahweh042.kits
 
+import com.github.yahweh042.kits.components.PropertyItem
 import com.intellij.ide.ui.LafManager
 import com.intellij.ide.ui.UITheme
 import com.intellij.openapi.actionSystem.ActionToolbarPosition
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.options.SearchableConfigurable
 import com.intellij.openapi.ui.DialogWrapper
-import com.intellij.openapi.util.Pair
 import com.intellij.ui.ToolbarDecorator
 import com.intellij.ui.components.JBTextField
-import com.intellij.ui.table.JBTable
+import com.intellij.ui.table.TableView
+import com.intellij.util.ui.ColumnInfo
+import com.intellij.util.ui.ListTableModel
 import com.intellij.util.ui.UI
 import com.intellij.util.ui.UIUtil
-import java.awt.*
-import java.io.Serial
-import java.util.*
+import java.awt.BorderLayout
+import java.awt.Color
+import java.awt.Font
+import java.awt.Insets
 import javax.swing.JComponent
 import javax.swing.JPanel
-import javax.swing.JTable
 import javax.swing.UIManager
 import javax.swing.border.EmptyBorder
-import javax.swing.table.DefaultTableCellRenderer
-import javax.swing.table.DefaultTableModel
 
 
 class ThemeKitsConfigurable : SearchableConfigurable {
 
     private val themeKitsState = ThemeKitsState.getInstance().state
 
-    private lateinit var mTable: JBTable
+    private lateinit var mTableView: TableView<PropertyItem>
     private lateinit var mSearchField: JBTextField
     private lateinit var mOriginValues: MutableMap<String, String>
     private var isModified = false
+    private lateinit var columns: Array<ColumnInfo<PropertyItem, String>>
 
     override fun getDisplayName(): String {
         return "ThemeKits"
@@ -41,31 +42,12 @@ class ThemeKitsConfigurable : SearchableConfigurable {
         return "ThemeKits"
     }
 
-    private fun getUIDefaultsData(): Array<Array<Any>> {
-        val data = Array(mOriginValues.size) {
-            arrayOf<Any>(0, 1)
-        }
-        var i = 0;
-        mOriginValues.forEach { (k, v) ->
-            val parseValue = UITheme.parseValue(k, v)
-            data[i][0] = k
-            data[i][1] = parseValue
-            i++
-        }
-        return data
+    private fun getItems(): List<PropertyItem> {
+        return mOriginValues.map { (key, value) -> PropertyItem(key, UITheme.parseValue(key, value)) }
     }
 
-    private fun createTableModel(): DefaultTableModel {
-        return object : DefaultTableModel(getUIDefaultsData(), arrayOf("Name", "Value")) {
-            @Serial
-            private val serialVersionUID: Long = 4410430065367899038L
-
-            override fun isCellEditable(row: Int, column: Int): Boolean {
-                if (column != 1) return false
-                val value = (getValueAt(row, column) as Pair<*, *>).second
-                return isEditable(value)
-            }
-        }
+    private fun getListTableModel(): ListTableModel<PropertyItem> {
+        return ListTableModel(columns, getItems())
     }
 
     private fun isEditable(value: Any): Boolean {
@@ -87,40 +69,41 @@ class ThemeKitsConfigurable : SearchableConfigurable {
         val panel = JPanel(BorderLayout())
         panel.add(top, BorderLayout.NORTH)
 
-        val columns = Vector<String>(2)
-        columns.add("Name")
-        columns.add("Value")
 
-        mTable = object : JBTable(createTableModel()) {
-
+        val propertyKeyColumn = object : ColumnInfo<PropertyItem, String>("Key") {
+            override fun valueOf(item: PropertyItem): String {
+                return item.key
+            }
         }
 
-        mTable.setDefaultRenderer(Any::class.java, object : DefaultTableCellRenderer() {
-            override fun getTableCellRendererComponent(
-                table: JTable,
-                value: Any,
-                isSelected: Boolean,
-                hasFocus: Boolean,
-                row: Int,
-                column: Int
-            ): Component {
-                return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column)
+        val propertyValueColumn = object : ColumnInfo<PropertyItem, String>("Value") {
+            override fun valueOf(item: PropertyItem): String {
+                return item.value.toString()
             }
-        })
 
-        val centerPanel = ToolbarDecorator.createDecorator(mTable)
+            override fun isCellEditable(item: PropertyItem): Boolean {
+                val value = item.value
+                return isEditable(value)
+            }
+        }
+
+        columns = arrayOf(propertyKeyColumn, propertyValueColumn)
+        mTableView = TableView(getListTableModel())
+        val centerPanel = ToolbarDecorator.createDecorator(mTableView)
             .setToolbarPosition(ActionToolbarPosition.BOTTOM)
             .setAddAction {
                 addNewValue()
             }
             .setRemoveAction {
-                val selectedRow = mTable.selectedRow
-                if (selectedRow == 1) {
+                val selectedRows = mTableView.selectedRows
+                if (selectedRows == null || selectedRows.isEmpty()) {
                     return@setRemoveAction
                 }
-                val first = (mTable.getValueAt(selectedRow, 0) as Pair<*, *>).first
-                mOriginValues.remove(first)
-                mTable.model = createTableModel()
+                for (selectedRow in selectedRows) {
+                    val selectedPropertyItem = mTableView.getRow(selectedRow)
+                    mOriginValues.remove(selectedPropertyItem.key)
+                }
+                mTableView.model = getListTableModel()
                 isModified = true
             }
             .createPanel()
@@ -130,7 +113,7 @@ class ThemeKitsConfigurable : SearchableConfigurable {
     }
 
     private fun addNewValue() {
-        ApplicationManager.getApplication().invokeLater(object : DialogWrapper(mTable, true) {
+        ApplicationManager.getApplication().invokeLater(object : DialogWrapper(mTableView, true) {
             val name = JBTextField(40)
             val value = JBTextField(40)
 
@@ -157,7 +140,7 @@ class ThemeKitsConfigurable : SearchableConfigurable {
                     val parseValue = UITheme.parseValue(key, `val`) ?: return
                     if (isEditable(parseValue)) {
                         mOriginValues[key] = `val`
-                        mTable.model = createTableModel()
+                        mTableView.model = getListTableModel()
                         isModified = true
                     }
                 }
@@ -183,6 +166,5 @@ class ThemeKitsConfigurable : SearchableConfigurable {
         }
         isModified = false
     }
-
 
 }
