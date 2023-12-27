@@ -11,10 +11,10 @@ internal class ThemeKitsCreatedListener : AppLifecycleListener {
 
     override fun appFrameCreated(commandLineArgs: MutableList<String>) {
         super.appFrameCreated(commandLineArgs)
-        applyCustomProperty()
+        // applyCustomProperty()
         UIManager.addPropertyChangeListener {
             if (it.propertyName == "lookAndFeel") {
-                applyCustomProperty()
+                // applyCustomProperty()
             }
         }
     }

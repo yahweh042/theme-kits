@@ -14,23 +14,32 @@ import com.intellij.ui.components.JBList
 import java.awt.BorderLayout
 import javax.swing.JComponent
 import javax.swing.JPanel
+import javax.swing.ListModel
 
 class OneConfigurable : SearchableConfigurable {
+
+    private val state = ThemeKitsState.getInstance().state
+    private val originItems = state.themeJsons
+
+    private lateinit var mainPanel: JPanel
+    private lateinit var leftPanel: JPanel
+    private lateinit var themeNameList: JBList<String>
+
     override fun createComponent(): JComponent {
-        val panel = JPanel(BorderLayout(5, 5))
-        panel.add(getLeftPanel(), BorderLayout.WEST)
+        mainPanel = JPanel(BorderLayout(5, 5))
+        initLeftPanel()
         val document = EditorFactory.getInstance().createDocument("")
         val editor = EditorFactory.getInstance().createEditor(document)
         (editor as EditorEx).highlighter =
             EditorHighlighterFactory.getInstance().createEditorHighlighter(null, "demo.theme.json");
         editor.settings.isIndentGuidesShown = true
-        panel.add(editor.component, BorderLayout.CENTER)
-        return panel
+        mainPanel.add(editor.component, BorderLayout.CENTER)
+        return mainPanel
     }
 
-    private fun getLeftPanel(): JPanel {
-        val panel = JPanel(BorderLayout())
-        panel.setBorder(CustomLineBorder(1, 1, 1, 1))
+    private fun initLeftPanel() {
+        leftPanel = JPanel(BorderLayout())
+        leftPanel.setBorder(CustomLineBorder(1, 1, 1, 1))
         val actionGroup = DefaultActionGroup()
         actionGroup.add(object : AnAction(AllIcons.General.Add) {
             override fun actionPerformed(e: AnActionEvent) {
@@ -43,18 +52,29 @@ class OneConfigurable : SearchableConfigurable {
             }
         })
         val toolbar = ActionManager.getInstance().createActionToolbar("Toolbar", actionGroup, true)
-        panel.add(toolbar.component, BorderLayout.NORTH)
-        val jbList = JBList("Internal.theme.json", "Material.theme.json")
-        panel.add(jbList, BorderLayout.CENTER)
-        return panel
+        leftPanel.add(toolbar.component, BorderLayout.NORTH)
+        initThemeNameList()
+        mainPanel.add(leftPanel, BorderLayout.WEST)
     }
+
+    private fun initThemeNameList() {
+        val listItems = getListItems()
+        themeNameList = JBList(listItems)
+        themeNameList.selectedIndex = listItems.indexOf(state.selectedThemeName)
+        leftPanel.add(themeNameList, BorderLayout.CENTER)
+    }
+
+    private fun refreshUI() {
+        themeNameList.model = JBList.createDefaultListModel(getListItems())
+    }
+
+    private fun getListItems() = originItems.keys.toList()
 
     override fun isModified(): Boolean {
         return false
     }
 
     override fun apply() {
-        println("apply")
     }
 
     override fun getDisplayName() = "One"

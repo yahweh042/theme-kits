@@ -18,6 +18,8 @@
         <applicationService serviceImplementation="com.github.yahweh042.kits.ThemeKitsState" id="ThemeKitsState"/>
         <applicationConfigurable instance="com.github.yahweh042.kits.ThemeKitsConfigurable" displayName="ThemeKits"/>
 
+        <themeProvider id="14aaa10e-46a4-42fd-bb24-24c602eed5af" path="/theme/Min Dark.theme.json"/>
+        <themeProvider id="1de439c7-d9b1-4a3a-8d41-1d50f6b572b1" path="/theme/Min_Light.theme.json"/>
     </extensions>
 
     <applicationListeners>
