@@ -13,7 +13,7 @@
         <themeProvider id="be8b0f9d-9bfe-41cd-8f88-ce1a3b45c3c1" path="/theme/Gruvbox.theme.json"/>
         <themeProvider id="522f020f-4a89-4346-9eb4-d13444990ad9" path="/theme/Solarized.theme.json"/>
         <themeProvider id="a4d74e7f-d628-439e-90a7-5be02d6864c8" path="/theme/Material.theme.json"/>
-        <themeProvider id="9a282929-a916-4baa-bd5a-5691d19d324e" path="/theme/One Dark.theme.json"/>
+        <themeProvider id="9a282929-a916-4baa-bd5a-5691d19d324e" path="/theme/One_Dark.theme.json"/>
 
         <applicationService serviceImplementation="com.github.yahweh042.kits.ThemeKitsState" id="ThemeKitsState"/>
         <applicationConfigurable instance="com.github.yahweh042.kits.ThemeKitsConfigurable" displayName="ThemeKits"/>
