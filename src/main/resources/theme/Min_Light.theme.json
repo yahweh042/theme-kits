@@ -2,7 +2,7 @@
   "name": "Min Light",
   "dark": false,
   "author": "",
-  "editorScheme": "./Min_Light.xml",
+  "editorScheme": "/theme/Min_Light.xml",
   "colors": {
     "bg": "#f7f7f7",
     "fg": "#333333",

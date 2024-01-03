@@ -127,6 +127,8 @@
       "foreground": "bg2"
     },
 
+    "Notification.arc": 5,
+
     "ScrollBar": {
       "thumbColor": "bg2",
       "thumbBorderColor": "bg2",
