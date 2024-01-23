@@ -1,0 +1,14 @@
+{
+  "name": "base",
+  "dark": true,
+  "author": "",
+  "ui": {
+    "List.rowHeight": 23,
+    "Tree.rowHeight": 23,
+    "PopupMenu.Selection.innerInsets": "3,7,3,7",
+    "PopupMenuSeparator.stripeIndent": 0,
+    "PopupMenuSeparator.height": 0,
+    "Button.arc": 0,
+    "Component.arc": 0
+  }
+}

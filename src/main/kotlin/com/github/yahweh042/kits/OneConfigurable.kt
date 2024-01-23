@@ -8,7 +8,9 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.editor.EditorFactory
 import com.intellij.openapi.editor.ex.EditorEx
 import com.intellij.openapi.editor.highlighter.EditorHighlighterFactory
+import com.intellij.openapi.fileTypes.FileTypeRegistry
 import com.intellij.openapi.options.SearchableConfigurable
+import com.intellij.ui.LanguageTextField
 import com.intellij.ui.border.CustomLineBorder
 import com.intellij.ui.components.JBList
 import java.awt.BorderLayout
@@ -30,6 +32,11 @@ class OneConfigurable : SearchableConfigurable {
         initLeftPanel()
         val document = EditorFactory.getInstance().createDocument("")
         val editor = EditorFactory.getInstance().createEditor(document)
+
+        LanguageTextField()
+
+        FileTypeRegistry.getInstance().registeredFileTypes
+
         (editor as EditorEx).highlighter =
             EditorHighlighterFactory.getInstance().createEditorHighlighter(null, "demo.theme.json");
         editor.settings.isIndentGuidesShown = true

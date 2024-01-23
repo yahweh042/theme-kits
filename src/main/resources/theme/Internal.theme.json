@@ -23,6 +23,7 @@
     "StatusBar.hoverBackground": "bg2",
     "StatusBar.Widget.hoverBackground": "bg2",
     "Button.arc": 5,
+    "Menu.borderInsets": "0,1,0,1",
     "Button.startBackground": "bg2",
     "Button.endBackground": "bg2",
     "Button.foreground": "fg",
