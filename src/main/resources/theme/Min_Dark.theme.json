@@ -2,7 +2,7 @@
   "name": "Min Dark",
   "dark": true,
   "author": "JetBrains",
-  "editorScheme": "/theme/Min Dark.xml",
+  "editorScheme": "/theme/Min_Dark.xml",
 
   "colors": {
     "Grey1": "#1E1F22",
@@ -163,7 +163,6 @@
     },
 
     "SegmentedButton": {
-
       "selectedStartBorderColor": "Grey5",
       "selectedEndBorderColor": "Grey5",
       "selectedButtonColor": "Grey3",

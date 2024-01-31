@@ -19,10 +19,10 @@
         <!--<themeProvider id="522f020f-4a89-4346-9eb4-d13444990ad9" path="/theme/Solarized.theme.json"/>-->
         <!--<themeProvider id="a4d74e7f-d628-439e-90a7-5be02d6864c8" path="/theme/Material.theme.json"/>-->
         <!--<themeProvider id="9a282929-a916-4baa-bd5a-5691d19d324e" path="/theme/One_Dark.theme.json"/>-->
-        <!--<themeProvider id="14aaa10e-46a4-42fd-bb24-24c602eed5af" path="/theme/Min Dark.theme.json"/>-->
-        <!--<themeProvider id="1de439c7-d9b1-4a3a-8d41-1d50f6b572b1" path="/theme/Min_Light.theme.json"/>-->
-        <!--<themeProvider id="69cd773e-e9fa-4af7-a255-31a2a33ade34" path="/theme/Min_Darcula.theme.json"/>-->
-        <themeProvider id="90babaf3-dacb-4b3c-b1ac-ea634fbf6436" path="/theme/base.theme.json"/>
+        <themeProvider id="14aaa10e-46a4-42fd-bb24-24c602eed5af" path="/theme/Min_Dark.theme.json"/>
+        <themeProvider id="1de439c7-d9b1-4a3a-8d41-1d50f6b572b1" path="/theme/Min_Light.theme.json"/>
+        <themeProvider id="69cd773e-e9fa-4af7-a255-31a2a33ade34" path="/theme/Min_Darcula.theme.json"/>
+        <!--<themeProvider id="90babaf3-dacb-4b3c-b1ac-ea634fbf6436" path="/theme/base.theme.json"/>-->
     </extensions>
 
     <applicationListeners>
